@@ -31,7 +31,7 @@ State = "idle"
 
 /* Movement */
 
-speed = 150 / room_speed
+speed = 100 / room_speed
 direction = random(360)
 </string>
           </argument>
@@ -67,8 +67,14 @@ if State = "idle" {
     if IHaveLineOfSightTo(oPlayer) {
     // Go towards the player
     direction = point_direction(x,y,oPlayer.x,oPlayer.y)
+    // Increases speed
+    speed = 150 / room_speed
+    // Alert clarity
+    sprite_index = sEnemyAlert
     } else {
       State = "idle"
+      speed = 100 / room_speed
+      sprite_index = sEnemy
     }
   }
 
