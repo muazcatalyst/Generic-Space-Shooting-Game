@@ -29,6 +29,7 @@
     <script>scripts\ResetShunts.gml</script>
     <script>scripts\ButtonPressed.gml</script>
     <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
+    <script>scripts\IHaveLineOfSightTo.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fTitle</font>

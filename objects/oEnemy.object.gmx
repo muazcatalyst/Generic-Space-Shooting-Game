@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Movement */
+            <string>/* AI mechanics */
+
+State = "idle"
+
+/* Movement */
 
 speed = 150 / room_speed
 direction = random(360)
@@ -51,7 +55,24 @@ direction = random(360)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Object Facing */
+            <string>/* AI mechanics */
+if State = "idle" {
+
+    if IHaveLineOfSightTo(oPlayer) {
+      State = "alert"
+    } 
+  }
+
+  else if State = "alert" {
+    if IHaveLineOfSightTo(oPlayer) {
+    // Go towards the player
+    direction = point_direction(x,y,oPlayer.x,oPlayer.y)
+    } else {
+      State = "idle"
+    }
+  }
+
+/* Object Facing */
 
 image_angle = direction
 
