@@ -59,7 +59,14 @@ direction = random(360)
 if State = "idle" {
 
     if IHaveLineOfSightTo(oPlayer) {
+          // If the enemy is looking at the player's direction
+      DirectionToPlayer = point_direction(x,y,oPlayer.x,oPlayer.y)
+      RelativeDirectionToPlayer = abs(image_angle - DirectionToPlayer)
+      HalfFieldOfView = 90
+      
+      if RelativeDirectionToPlayer &lt; HalfFieldOfView or RelativeDirectionToPlayer &gt; 360 - HalfFieldOfView  {
       State = "alert"
+      }
     } 
   }
 
@@ -86,11 +93,11 @@ image_angle = direction
 /* Staying On-screen */
 
 if y &lt; 0 or y &gt; room_height {
-  vspeed = vspeed * - 1
-}
+  vspeed = vspeed * - 1 
+  }
 if x &lt; 0 or x &gt; room_width {
-  hspeed = hspeed * - 1
-}
+  hspeed = hspeed * - 1 
+  }
 </string>
           </argument>
         </arguments>
