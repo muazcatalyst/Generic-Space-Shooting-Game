@@ -123,9 +123,10 @@ if x &lt; 0 or x &gt; room_width {
             <string>/* Bounce off */
 
 CollisionChecks = 0
-while place_meeting(x + hspeed, y + vspeed, oSolid) &amp;&amp; CollisionChecks &lt;= 4 {
+DirectionToCheck = choose(-1,1)
+while place_meeting(x + hspeed, y + vspeed, oSolid) &amp;&amp; CollisionChecks &lt;= 12 {
 
-    direction = direction + 35
+    direction = direction + (random_range(30,60) * DirectionToCheck)
     CollisionChecks = CollisionChecks + 1
 
 }
