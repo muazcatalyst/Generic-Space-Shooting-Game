@@ -101,11 +101,12 @@ draw_set_halign(fa_center)
 draw_set_font(fTitle)
 draw_set_colour(c_white)
 
-DrawTextAndUpdateCurrentY("Space Shooter 3776")
+DrawTextAndUpdateCurrentY("Generic Space Shooting Game")
 
 draw_set_font(fMenu)
 
-DrawTextAndUpdateCurrentY("generic space shooting game")
+DrawTextAndUpdateCurrentY("A game where you shoot things, in space!")
+
 
 CurrentY = CurrentY + 60
 draw_set_font(fMenuButton)
