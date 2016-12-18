@@ -105,7 +105,7 @@ TotalChunksSoFar = 0
 ChunkSpeed = 360 / room_speed
 
 while TotalChunksSoFar &lt; TotalChunksToCreate {
-  NewChunk = instance_create(x,y,oEnemyChunk)
+  NewChunk = instance_create(x,y,oEnemy2Chunk)
   NewChunk.direction = random(360)
   NewChunk.speed = ChunkSpeed
   TotalChunksSoFar = TotalChunksSoFar + 1

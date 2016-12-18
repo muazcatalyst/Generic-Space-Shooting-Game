@@ -164,7 +164,7 @@ if y &gt; room_height { y = room_height }
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="oEnemyBullet">
+    <event eventtype="4" ename="oEnemy2Chunk">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -181,9 +181,41 @@ if y &gt; room_height { y = room_height }
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Damage */
+            <string>TotalChunksToCreate = 10
+TotalChunksSoFar = 0
+ChunkSpeed = 360 / room_speed
 
-TotalChunksToCreate = 10
+while TotalChunksSoFar &lt; TotalChunksToCreate {
+  NewChunk = instance_create(x,y,oPlayerChunk)
+  NewChunk.direction = random(360)
+  NewChunk.speed = ChunkSpeed
+  TotalChunksSoFar = TotalChunksSoFar + 1
+}
+
+instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oEnemyChunk">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>TotalChunksToCreate = 10
 TotalChunksSoFar = 0
 ChunkSpeed = 360 / room_speed
 
@@ -218,6 +250,42 @@ instance_destroy()
           <argument>
             <kind>1</kind>
             <string>TotalChunksToCreate = 10
+TotalChunksSoFar = 0
+ChunkSpeed = 360 / room_speed
+
+while TotalChunksSoFar &lt; TotalChunksToCreate {
+  NewChunk = instance_create(x,y,oPlayerChunk)
+  NewChunk.direction = random(360)
+  NewChunk.speed = ChunkSpeed
+  TotalChunksSoFar = TotalChunksSoFar + 1
+}
+
+instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oEnemyBullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/* Damage */
+
+TotalChunksToCreate = 10
 TotalChunksSoFar = 0
 ChunkSpeed = 360 / room_speed
 
